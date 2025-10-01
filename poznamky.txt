@@ -1,0 +1,48 @@
+Instalacia django do pythonu
+    pip - python install cmd
+    pip install django
+    pip list - zobrazenie nainstalovanych verzii
+Vytvorenie django projektu
+    django-admin startproject nazov_projektu .
+Nastavenie jazyka a casu pre projekt(mysiteu/settings.py)
+    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = 'Europe/Bratislava'
+Spustenie vyvojoveho serveru
+    python manage.py runserver
+    python .\manage.py runserver
+Vytvorenie aplikacie
+    python 1.10\\manage.py startapp skuska
+Zaregistrovanie aplikacie do projektu (mysiteu/settings.py)
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'nazov app',
+    ]
+Vytvorenie jednoducheho views (mysiteu/views.py)
+    from django.shortcuts import render, HttpResponse
+
+    def index(request):
+        #python code
+        return HttpResponse("hello world")
+Vytvorenie urlpattern (mysiteu/urls.py)
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('skuska/', include('skuska.urls')),
+    ]
+    vytvorit subor urls.py v priecinku app (skuska.py)
+    upravit urls.py
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path('', views.index, name='index'),
+    ]
+
+
+
