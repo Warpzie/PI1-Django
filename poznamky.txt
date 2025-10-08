@@ -43,6 +43,12 @@ Vytvorenie urlpattern (mysiteu/urls.py)
     urlpatterns = [
         path('', views.index, name='index'),
     ]
+Template
+    vytvorit v priecinku app priecinok templates/nazovApp
+    v tomto priecinku vytvorit html subor (ex: index.html)
+    upravit views tak aby vyuzival template
+        return render(request, 'kalkulacka/index.html')
+
 
 
 
