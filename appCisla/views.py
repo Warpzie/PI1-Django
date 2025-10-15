@@ -24,20 +24,20 @@ def index(request):
             evenB = "parne"
         else:
             evenB = "neparne"
-        if a > 2:
+        if a > 3:
+            primeA = "je" 
             for i in range(2, int(a)):
                 if (a % i) == 0:
                     primeA = "nie je "
-                else:
-                    primeA = "je "
-            else:
-                primeA = "je"
-        if b > 2:
+                    break 
+        else:
+            primeB = "je " 
+        if b > 3:
+            primeB = "je" 
             for i in range(2, int(b)):
                 if (b % i) == 0:
                     primeB = "nie je "
-                else:
-                    primeB = "je "
-            else: 
-                primeB = "je"
+                    break 
+        else:
+            primeB = "je " 
     return render(request, 'appCisla/index.html', {"a":a, "b":b, "comp":comp, "evenA":evenA, "evenB":evenB, "primeA":primeA, "primeB":primeB})
