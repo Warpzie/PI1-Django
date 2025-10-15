@@ -11,7 +11,7 @@ Spustenie vyvojoveho serveru
     python manage.py runserver
     python .\manage.py runserver
 Vytvorenie aplikacie
-    python 1.10\\manage.py startapp skuska
+    python manage.py startapp skuska
 Zaregistrovanie aplikacie do projektu (mysiteu/settings.py)
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -48,6 +48,10 @@ Template
     v tomto priecinku vytvorit html subor (ex: index.html)
     upravit views tak aby vyuzival template
         return render(request, 'kalkulacka/index.html')
+    def index(request):
+        a = "fajfh"
+        b = "hdfjah"
+        return render(request, 'appCisla/index.html', {"a":a, "b":b, "comp":comp})
 CSS, obrazky
     vytvorit v priecinku app priecinok static/nazovApp
     v tomto priecinku vytvorit css (kalkulacka.css)
