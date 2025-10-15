@@ -48,7 +48,15 @@ Template
     v tomto priecinku vytvorit html subor (ex: index.html)
     upravit views tak aby vyuzival template
         return render(request, 'kalkulacka/index.html')
-
-
-
-
+CSS, obrazky
+    vytvorit v priecinku app priecinok static/nazovApp
+    v tomto priecinku vytvorit css (kalkulacka.css)
+    do tohto priecinku nakopirovat obrazky
+    do template (index.html) doplnit : 
+        uplne na zaciatok {% load static %}
+        do hlavicky odkaz na style
+        <head>
+            <link rel="stylesheet" href="{% static 'kalkulacka/kalkulacka.css' %}">
+        </head>
+    vklad obrazku
+        <img src={% static 'kalkulacka/calc.png'%}
